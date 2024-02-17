@@ -8,10 +8,12 @@ import javax.swing.JPanel
 class AppSettingsComponent {
     val mainPanel: JPanel by lazy {
         FormBuilder.createFormBuilder()
-            .addLabeledComponent(JBLabel("Cursor color: "), cursorColor, 1, false)
+            .addLabeledComponent(JBLabel("Cursor color (English): "), EnglishCursorColor, 1, false)
+            .addLabeledComponent(JBLabel("Cursor color (Other): "), NotEnglishCursorColor, 1, false)
             .addComponentFillVertically(JPanel(), 0)
             .panel
     }
 
-    val cursorColor: ColorPanel = ColorPanel()
+    val EnglishCursorColor: ColorPanel = ColorPanel()
+    val NotEnglishCursorColor: ColorPanel = ColorPanel()
 }

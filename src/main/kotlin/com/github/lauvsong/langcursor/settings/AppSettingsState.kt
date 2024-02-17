@@ -13,10 +13,14 @@ import java.awt.Color
     storages = [Storage("AppSettingsState.xml")]
 )
 class AppSettingsState : PersistentStateComponent<AppSettingsState> {
-    var cursorColorAsRgb: Int = JBColor.RED.rgb
+    var NotEnglishCursorColorAsRgb: Int = JBColor.RED.rgb
+    var EnglishCursorColorAsRgb: Int = JBColor.WHITE.rgb
 
-    val cursorColor: Color
-        get() = Color(cursorColorAsRgb)
+    val NotEnglishCursorColor: Color
+        get() = Color(NotEnglishCursorColorAsRgb)
+
+    val EnglishCursorColor: Color
+        get() = Color(EnglishCursorColorAsRgb)
 
     override fun getState(): AppSettingsState {
         return this

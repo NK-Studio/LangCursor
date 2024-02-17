@@ -33,7 +33,7 @@ object LanguageCheckService {
 
     private fun switchCursorColorByLanguage() {
         if (languageCheckStrategy.isEnglishInput()) {
-            CursorColorService.toOriginalCursorColor()
+            CursorColorService.toEnglishCursorColor()
         } else {
             CursorColorService.toNotEnglishCursorColor()
         }
