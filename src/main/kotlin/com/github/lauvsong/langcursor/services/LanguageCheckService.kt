@@ -2,6 +2,7 @@ package com.github.lauvsong.langcursor.services
 
 import com.github.lauvsong.langcursor.core.LanguageCheckStrategy
 import com.github.lauvsong.langcursor.core.defaultLanguageCheckStrategy
+import com.github.lauvsong.langcursor.core.macLanguageCheckStrategy
 import com.github.lauvsong.langcursor.core.windowsLanguageCheckStrategy
 import org.apache.commons.lang3.SystemUtils
 import java.util.concurrent.Executors
@@ -42,7 +43,7 @@ object LanguageCheckService {
     private fun setLanguageCheckStrategy(): LanguageCheckStrategy =
         if (SystemUtils.IS_OS_WINDOWS) {
             windowsLanguageCheckStrategy
-        }  else {
+        } else {
             defaultLanguageCheckStrategy
         }
 }

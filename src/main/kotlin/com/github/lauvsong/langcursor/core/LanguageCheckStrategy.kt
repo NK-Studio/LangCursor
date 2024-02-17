@@ -1,5 +1,6 @@
 package com.github.lauvsong.langcursor.core
 
+import com.github.lauvsong.langcursor.utils.MacLanguageUtil
 import com.github.lauvsong.langcursor.utils.WindowsLanguageUtil
 import com.jcraft.jsch.agentproxy.connector.PageantConnector
 import java.awt.im.InputContext
@@ -17,6 +18,10 @@ val defaultLanguageCheckStrategy = LanguageCheckStrategy {
     language == Locale.ENGLISH.language
             || country == Locale.US.country
             || country == Locale.UK.country
+}
+
+val macLanguageCheckStrategy = LanguageCheckStrategy {
+    MacLanguageUtil.INSTANCE.isEnglish()
 }
 
 val windowsLanguageCheckStrategy = LanguageCheckStrategy {
