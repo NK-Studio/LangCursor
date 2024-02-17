@@ -43,7 +43,10 @@ object LanguageCheckService {
     private fun setLanguageCheckStrategy(): LanguageCheckStrategy =
         if (SystemUtils.IS_OS_WINDOWS) {
             windowsLanguageCheckStrategy
-        } else {
+        } else if (SystemUtils.IS_OS_MAC) {
+            macLanguageCheckStrategy
+        }else
+        {
             defaultLanguageCheckStrategy
         }
 }
